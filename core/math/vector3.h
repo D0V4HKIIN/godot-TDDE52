@@ -187,7 +187,8 @@ struct [[nodiscard]] Vector3 {
 	operator Vector3i() const;
 
 	_FORCE_INLINE_ Vector3() {}
-	_FORCE_INLINE_ Vector3(real_t p_value) {
+	template <class T, std::enable_if_t<std::is_same_v<T, float> || std::is_same_v<T, double> || std::is_same_v<T, int>, bool> = true>
+	_FORCE_INLINE_ Vector3(T p_value) {
 		x = p_value;
 		y = p_value;
 		z = p_value;
