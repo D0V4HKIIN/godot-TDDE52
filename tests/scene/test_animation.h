@@ -101,7 +101,8 @@ TEST_CASE("[Animation] Create 3D position track") {
 	CHECK(!animation->track_is_compressed(0));
 	Vector3 track0 = animation->track_get_key_value(0, 0);
 	CHECK(track0.is_equal_approx(Vector3(0, 1, 2)));
-	CHECK(Vector3(animation->track_get_key_value(0, 1)).is_equal_approx(Vector3(3.5, 4, 5)));
+	Vector3 track1 = animation->track_get_key_value(0, 1);
+	CHECK(track1.is_equal_approx(Vector3(3.5, 4, 5)));
 
 	Vector3 r_interpolation;
 
@@ -192,8 +193,10 @@ TEST_CASE("[Animation] Create 3D scale track") {
 
 	CHECK(animation->get_track_count() == 1);
 	CHECK(!animation->track_is_compressed(0));
-	CHECK(Vector3(animation->track_get_key_value(0, 0)).is_equal_approx(Vector3(0, 1, 2)));
-	CHECK(Vector3(animation->track_get_key_value(0, 1)).is_equal_approx(Vector3(3.5, 4, 5)));
+	Vector3 track0 = animation->track_get_key_value(0, 0);
+	CHECK(track0.is_equal_approx(Vector3(0, 1, 2)));
+	Vector3 track1 = animation->track_get_key_value(0, 1);
+	CHECK(track1.is_equal_approx(Vector3(3.5, 4, 5)));
 
 	Vector3 r_interpolation;
 
