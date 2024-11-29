@@ -84,6 +84,7 @@ void Variant::_register_variant_constructors() {
 	add_constructor<VariantConstructNoArgs<Vector2>>(sarray());
 	add_constructor<VariantConstructor<Vector2, Vector2>>(sarray("from"));
 	add_constructor<VariantConstructor<Vector2, Vector2i>>(sarray("from"));
+	add_constructor<VariantConstructor<Vector2, double>>(sarray("value"));
 	add_constructor<VariantConstructor<Vector2, double, double>>(sarray("x", "y"));
 
 	add_constructor<VariantConstructNoArgs<Vector2i>>(sarray());
